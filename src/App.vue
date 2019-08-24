@@ -21,7 +21,9 @@
     <div>
       <v-toolbar dark color="primary">
         <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>AD APPLICATION</v-toolbar-title>
+        <v-toolbar-title>
+          <router-link to="/" tag="span" class="pointer">AD APPLICATION</router-link>
+        </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
           <v-btn v-for="link in links" :key="link.title" :to="link.url" text>
@@ -33,20 +35,10 @@
     </div>
     <!-- TOOLBAR END -->
 
-    <!-- Sizes your content based upon application components -->
     <v-content>
-
-      <!-- Provides the application the proper gutter -->
-      
-
-        <!-- If using vue-router -->
-        <router-view />
-      
+        <router-view />  
     </v-content>
 
-    <v-footer app>
-      <!-- -->
-    </v-footer>
   </v-app>
 </template>
 
@@ -66,3 +58,8 @@
     }
   };
 </script>
+
+<style lang="stylus" scoped>
+  .pointer
+    cursor pointer
+</style>
